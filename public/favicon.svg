@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0E0D0C"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" stroke="#B8924A" stroke-width="1.5" stroke-opacity="0.4"/>
+  <!-- Central pillar / balance -->
+  <path d="M32 14v36" stroke="#D4B572" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M22 20h20" stroke="#D4B572" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M24 50h16" stroke="#B8924A" stroke-width="2" stroke-linecap="round"/>
+  <!-- Left Pan -->
+  <path d="M22 20l-6 12h12l-6-12z" stroke="#D4B572" stroke-width="1.5" fill="#B8924A" fill-opacity="0.25"/>
+  <!-- Right Pan -->
+  <path d="M42 20l-6 12h12l-6-12z" stroke="#D4B572" stroke-width="1.5" fill="#B8924A" fill-opacity="0.25"/>
+</svg>
