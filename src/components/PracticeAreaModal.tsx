@@ -28,7 +28,7 @@ export const PracticeAreaModal: React.FC<PracticeAreaModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded bg-surface-card border border-subtle shadow-2xl p-space-lg sm:p-space-xl text-on-surface"
+        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded bg-surface-card border border-subtle shadow-2xl p-3 sm:p-space-lg md:p-space-xl text-on-surface"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal de Área de Atuação */}

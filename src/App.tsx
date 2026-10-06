@@ -370,19 +370,19 @@ export default function App() {
 
         {/* Menu Mobile Responsivo */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-surface-charcoal/95 backdrop-blur-xl border-b border-subtle px-margin py-space-md space-y-space-sm">
-            <div className="flex flex-col space-y-2">
+          <div className="lg:hidden bg-surface-charcoal/95 backdrop-blur-xl border-b border-subtle px-margin py-space-md space-y-space-sm max-h-[calc(100vh-5rem)] overflow-y-auto animate-fade-in shadow-2xl">
+            <div className="flex flex-col space-y-1">
               <a
                 href="#inicio"
                 onClick={(e) => handleNavigateSection(e, "#inicio", "inicio")}
-                className="py-1.5 text-label-md text-text-primary hover:text-gold-bright transition-colors"
+                className="py-2.5 px-3 rounded text-label-md text-text-primary hover:text-gold-bright hover:bg-surface-graphite/60 transition-colors"
               >
                 Início
               </a>
               <a
                 href="#sobre"
                 onClick={(e) => handleNavigateSection(e, "#sobre", "sobre")}
-                className="py-1.5 text-label-md text-text-muted hover:text-gold-bright transition-colors"
+                className="py-2.5 px-3 rounded text-label-md text-text-muted hover:text-gold-bright hover:bg-surface-graphite/60 transition-colors"
               >
                 Sobre
               </a>
@@ -391,7 +391,7 @@ export default function App() {
                 onClick={(e) =>
                   handleNavigateSection(e, "#areas", "areas-de-atuacao")
                 }
-                className="py-1.5 text-label-md text-text-muted hover:text-gold-bright transition-colors"
+                className="py-2.5 px-3 rounded text-label-md text-text-muted hover:text-gold-bright hover:bg-surface-graphite/60 transition-colors"
               >
                 Áreas de Atuação
               </a>
@@ -400,32 +400,32 @@ export default function App() {
                 onClick={(e) =>
                   handleNavigateSection(e, "#como-atuamos", "como-atuamos")
                 }
-                className="py-1.5 text-label-md text-text-muted hover:text-gold-bright transition-colors"
+                className="py-2.5 px-3 rounded text-label-md text-text-muted hover:text-gold-bright hover:bg-surface-graphite/60 transition-colors"
               >
                 Como Atuamos
               </a>
               <a
                 href="#valores"
                 onClick={(e) => handleNavigateSection(e, "#valores", "valores")}
-                className="py-1.5 text-label-md text-text-muted hover:text-gold-bright transition-colors"
+                className="py-2.5 px-3 rounded text-label-md text-text-muted hover:text-gold-bright hover:bg-surface-graphite/60 transition-colors"
               >
                 Valores
               </a>
               <a
                 href="#contato"
                 onClick={(e) => handleNavigateSection(e, "#contato", "contato")}
-                className="py-1.5 text-label-md text-text-muted hover:text-gold-bright transition-colors"
+                className="py-2.5 px-3 rounded text-label-md text-text-muted hover:text-gold-bright hover:bg-surface-graphite/60 transition-colors"
               >
                 Contato
               </a>
-              <div className="pt-2 border-t border-subtle flex items-center justify-between">
+              <div className="pt-3 mt-1 border-t border-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-3">
                 <span className="font-label-caps text-label-caps text-gold-bright">
                   OAB/MG 000.000
                 </span>
                 <button
                   type="button"
                   onClick={(e) => handleOpenScreen(e, "informativo")}
-                  className="text-body-sm text-gold-bright underline underline-offset-4"
+                  className="text-body-sm text-gold-bright underline underline-offset-4 text-left sm:text-right"
                 >
                   Artigos Informativos
                 </button>
@@ -541,24 +541,23 @@ export default function App() {
                 }}
               ></div>
 
-              <div className="relative z-10 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-2xl lg:py-space-3xl">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl lg:gap-space-2xl items-center">
+              <div className="relative z-10 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-xl sm:py-space-2xl lg:py-space-3xl">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg sm:gap-space-xl lg:gap-space-2xl items-center">
                   {/* Coluna de Texto & Contexto */}
-                  <div className="lg:col-span-7 flex flex-col items-start space-y-space-lg">
+                  <div className="lg:col-span-7 flex flex-col items-start space-y-space-md sm:space-y-space-lg">
                     {/* Selo Regulatório OAB */}
-                    <div className="hero-animate-badge inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-coffee/40 border border-gold-aged/40 text-gold-bright shadow-lg backdrop-blur-sm">
-                      <span className="relative flex h-2 w-2">
+                    <div className="hero-animate-badge inline-flex items-center gap-1.5 sm:gap-space-xs px-2.5 sm:px-space-md py-1 sm:py-1.5 rounded-full bg-surface-coffee/40 border border-gold-aged/40 text-gold-bright shadow-lg backdrop-blur-sm max-w-full">
+                      <span className="relative flex h-2 w-2 flex-shrink-0">
                         <span className="animate-beacon-dot absolute inline-flex h-full w-full rounded-full bg-gold-bright opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-bright"></span>
                       </span>
-                      <span className="font-label-caps text-label-caps tracking-widest uppercase">
-                        OAB/MG 000.000 · Atuação em Direito Civil, Empresarial e
-                        Família
+                      <span className="font-label-caps text-[10px] sm:text-label-caps tracking-wider sm:tracking-widest uppercase truncate sm:whitespace-normal">
+                        OAB/MG 000.000 · Direito Civil, Empresarial e Família
                       </span>
                     </div>
 
                     {/* Título Hero Nobre com animação de palavras e hover glow */}
-                    <h1 className="hero-animate-title font-display-hero text-display-hero-mobile md:text-display-hero text-text-primary tracking-tight">
+                    <h1 className="hero-animate-title font-display-hero text-display-hero-mobile md:text-display-hero text-text-primary tracking-tight leading-tight">
                       <span className="word" data-delay="100">Advocacia</span>
                       <span className="word" data-delay="220">ética,</span>
                       <span className="word text-gold-bright" data-delay="360">estratégica</span>
@@ -570,7 +569,7 @@ export default function App() {
                     </h1>
 
                     {/* Subtítulo Informativo com animação escalonada */}
-                    <p className="hero-animate-desc font-body-lg text-body-lg text-text-muted max-w-2xl font-light leading-relaxed">
+                    <p className="hero-animate-desc font-body-lg text-body-md sm:text-body-lg text-text-muted max-w-2xl font-light leading-relaxed">
                       <span className="word" data-delay="1100">Orientação</span>
                       <span className="word" data-delay="1180">e</span>
                       <span className="word" data-delay="1260">representação</span>
@@ -591,21 +590,21 @@ export default function App() {
                     </p>
 
                     {/* CTAs Discretos Conforme Provimento 205/2021 */}
-                    <div className="hero-animate-cta flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md pt-space-xs w-full sm:w-auto">
+                    <div className="hero-animate-cta flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm sm:gap-space-md pt-space-xs w-full sm:w-auto">
                       <a
-                        className="btn-shimmer inline-flex items-center justify-center px-space-xl py-3 rounded bg-gradient-to-r from-gold-aged to-primary-container text-surface-charcoal font-label-md text-label-md font-semibold tracking-wider uppercase hover:from-gold-bright hover:to-gold-aged transition-all shadow-[0_4px_14px_rgba(184,146,74,0.25)] hover:shadow-[0_6px_20px_rgba(212,181,114,0.4)] hover:-translate-y-0.5 whitespace-nowrap cursor-pointer"
+                        className="btn-shimmer inline-flex items-center justify-center px-space-lg sm:px-space-xl py-3 rounded bg-gradient-to-r from-gold-aged to-primary-container text-surface-charcoal font-label-md text-label-md font-semibold tracking-wider uppercase hover:from-gold-bright hover:to-gold-aged transition-all shadow-[0_4px_14px_rgba(184,146,74,0.25)] hover:shadow-[0_6px_20px_rgba(212,181,114,0.4)] hover:-translate-y-0.5 text-center cursor-pointer"
                         href="#contato"
                         onClick={(e) =>
                           handleNavigateSection(e, "#contato", "contato")
                         }
                       >
-                        Entre em contato
+                        <span>Entre em contato</span>
                         <span className="material-symbols-outlined text-base ml-2">
                           arrow_forward
                         </span>
                       </a>
                       <a
-                        className="inline-flex items-center justify-center px-space-lg py-3 rounded border border-subtle bg-surface-graphite/40 hover:bg-surface-coffee/30 hover:border-gold-aged text-text-primary font-label-md text-label-md transition-all hover:-translate-y-0.5 whitespace-nowrap cursor-pointer"
+                        className="inline-flex items-center justify-center px-space-md sm:px-space-lg py-3 rounded border border-subtle bg-surface-graphite/40 hover:bg-surface-coffee/30 hover:border-gold-aged text-text-primary font-label-md text-label-md transition-all hover:-translate-y-0.5 text-center cursor-pointer"
                         href="#areas"
                         onClick={(e) =>
                           handleNavigateSection(
@@ -620,28 +619,28 @@ export default function App() {
                     </div>
 
                     {/* Micro Destaques Institucionais */}
-                    <div className="hero-animate-metrics grid grid-cols-3 gap-space-md pt-space-lg border-t border-subtle/50 w-full max-w-xl text-left">
-                      <div className="p-space-xs rounded transition-transform hover:-translate-y-1 duration-200">
-                        <span className="block font-headline-sm text-headline-sm text-gold-bright">
+                    <div className="hero-animate-metrics grid grid-cols-3 gap-2 sm:gap-space-md pt-space-md sm:pt-space-lg border-t border-subtle/50 w-full max-w-xl text-left">
+                      <div className="p-1 sm:p-space-xs rounded transition-transform hover:-translate-y-1 duration-200">
+                        <span className="block font-headline-sm text-lg sm:text-headline-sm text-gold-bright">
                           100%
                         </span>
-                        <span className="block font-body-sm text-body-sm text-text-muted mt-0.5">
+                        <span className="block font-body-sm text-xs sm:text-body-sm text-text-muted mt-0.5">
                           Conformidade Ética OAB
                         </span>
                       </div>
-                      <div className="p-space-xs rounded transition-transform hover:-translate-y-1 duration-200">
-                        <span className="block font-headline-sm text-headline-sm text-gold-bright">
+                      <div className="p-1 sm:p-space-xs rounded transition-transform hover:-translate-y-1 duration-200">
+                        <span className="block font-headline-sm text-lg sm:text-headline-sm text-gold-bright">
                           Atuação
                         </span>
-                        <span className="block font-body-sm text-body-sm text-text-muted mt-0.5">
+                        <span className="block font-body-sm text-xs sm:text-body-sm text-text-muted mt-0.5">
                           Preventiva &amp; Contenciosa
                         </span>
                       </div>
-                      <div className="p-space-xs rounded transition-transform hover:-translate-y-1 duration-200">
-                        <span className="block font-headline-sm text-headline-sm text-gold-bright">
+                      <div className="p-1 sm:p-space-xs rounded transition-transform hover:-translate-y-1 duration-200">
+                        <span className="block font-headline-sm text-lg sm:text-headline-sm text-gold-bright">
                           Sigilo
                         </span>
-                        <span className="block font-body-sm text-body-sm text-text-muted mt-0.5">
+                        <span className="block font-body-sm text-xs sm:text-body-sm text-text-muted mt-0.5">
                           Garantido por Lei
                         </span>
                       </div>
@@ -649,11 +648,11 @@ export default function App() {
                   </div>
 
                   {/* Coluna de Imagem da Advogada */}
-                  <div className="hero-animate-portrait lg:col-span-5 relative flex justify-center lg:justify-end">
-                    <div className="relative w-full max-w-md animate-float-slow">
+                  <div className="hero-animate-portrait lg:col-span-5 relative flex justify-center lg:justify-end mt-4 lg:mt-0">
+                    <div className="relative w-full max-w-sm sm:max-w-md animate-float-slow">
                       {/* Moldura Decorativa Geométrica com Fio Dourado */}
-                      <div className="hero-animate-frame-1 absolute -top-3 -left-3 w-full h-full border border-gold-aged/40 rounded pointer-events-none transform -rotate-1 shadow-[0_0_15px_rgba(184,146,74,0.15)]"></div>
-                      <div className="hero-animate-frame-2 absolute -bottom-3 -right-3 w-full h-full border border-gold-aged/30 rounded pointer-events-none transform rotate-1 shadow-[0_0_15px_rgba(184,146,74,0.1)]"></div>
+                      <div className="hero-animate-frame-1 absolute -top-2 -left-2 sm:-top-3 sm:-left-3 w-full h-full border border-gold-aged/40 rounded pointer-events-none transform -rotate-1 shadow-[0_0_15px_rgba(184,146,74,0.15)]"></div>
+                      <div className="hero-animate-frame-2 absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 w-full h-full border border-gold-aged/30 rounded pointer-events-none transform rotate-1 shadow-[0_0_15px_rgba(184,146,74,0.1)]"></div>
 
                       {/* Recipiente Principal da Fotografia */}
                       <div
@@ -669,24 +668,24 @@ export default function App() {
                       >
                         <img
                           alt="Dra. Ana Paula Gonçalves - Advogada Titular"
-                          className="w-full h-[480px] object-cover object-top filter brightness-95 contrast-105 group-hover:scale-[1.01] transition-transform duration-300"
+                          className="w-full h-[380px] sm:h-[440px] md:h-[480px] object-cover object-top filter brightness-95 contrast-105 group-hover:scale-[1.01] transition-transform duration-300"
                           referrerPolicy="no-referrer"
                           src={HTML_IMAGES.lawyerPortrait}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-surface-charcoal via-transparent to-transparent opacity-80"></div>
 
                         {/* Cartão de Identificação Embutido na Imagem */}
-                        <div className="absolute bottom-4 left-4 right-4 p-space-md rounded bg-surface-graphite/90 backdrop-blur-md border border-subtle group-hover:border-gold-aged/60 transition-colors">
+                        <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-space-sm sm:p-space-md rounded bg-surface-graphite/90 backdrop-blur-md border border-subtle group-hover:border-gold-aged/60 transition-colors">
                           <div className="flex items-center justify-between gap-2">
                             <div>
-                              <h3 className="font-headline-sm text-headline-sm text-text-primary text-base sm:text-lg">
+                              <h3 className="font-headline-sm text-sm sm:text-headline-sm text-text-primary">
                                 Dra. Ana Paula Gonçalves
                               </h3>
-                              <p className="font-body-sm text-body-sm text-text-muted">
+                              <p className="font-body-sm text-xs sm:text-body-sm text-text-muted">
                                 Advogada e Consultora Jurídica
                               </p>
                             </div>
-                            <span className="font-label-caps text-label-caps text-gold-bright px-2 py-1 rounded bg-surface-coffee/40 border border-subtle whitespace-nowrap">
+                            <span className="font-label-caps text-[10px] sm:text-label-caps text-gold-bright px-1.5 sm:px-2 py-0.5 sm:py-1 rounded bg-surface-coffee/40 border border-subtle whitespace-nowrap">
                               OAB/MG 000.000
                             </span>
                           </div>
@@ -700,7 +699,7 @@ export default function App() {
 
             {/* SEÇÃO 2: SOBRE (#sobre) */}
             <section
-              className="w-full bg-surface-graphite py-space-3xl border-b border-subtle"
+              className="w-full bg-surface-graphite py-space-xl sm:py-space-2xl lg:py-space-3xl border-b border-subtle"
               id="sobre"
             >
               <div className="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
@@ -827,7 +826,7 @@ export default function App() {
 
             {/* SEÇÃO 3: ÁREAS DE ATUAÇÃO (#areas) */}
             <section
-              className="w-full bg-surface py-space-3xl border-b border-subtle"
+              className="w-full bg-surface py-space-xl sm:py-space-2xl lg:py-space-3xl border-b border-subtle"
               id="areas"
             >
               <div className="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
@@ -921,7 +920,7 @@ export default function App() {
 
             {/* SEÇÃO 4: COMO ATUAMOS (#como-atuamos) */}
             <section
-              className="w-full bg-surface-graphite py-space-3xl border-b border-subtle"
+              className="w-full bg-surface-graphite py-space-xl sm:py-space-2xl lg:py-space-3xl border-b border-subtle"
               id="como-atuamos"
             >
               <div className="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
@@ -930,7 +929,7 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-center max-w-3xl mx-auto mb-space-2xl space-y-space-xs"
+                  className="text-center max-w-3xl mx-auto mb-space-xl sm:mb-space-2xl space-y-space-xs"
                 >
                   <span className="font-label-caps text-label-caps text-gold-bright uppercase tracking-widest block">
                     Procedimento Técnico
@@ -990,12 +989,12 @@ export default function App() {
                         delay: index * 0.12,
                         ease: [0.16, 1, 0.3, 1],
                       }}
-                      className="card-interactive relative z-10 p-space-lg rounded bg-surface-card border border-subtle hover:border-gold-aged/60 flex flex-col items-start space-y-space-sm cursor-pointer"
+                      className="card-interactive relative z-10 p-space-md sm:p-space-lg rounded bg-surface-card border border-subtle hover:border-gold-aged/60 flex flex-col items-start space-y-space-sm cursor-pointer"
                     >
-                      <div className="w-12 h-12 rounded bg-surface-charcoal border border-gold-aged/40 flex items-center justify-center text-gold-bright font-headline-sm font-semibold shadow-md">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded bg-surface-charcoal border border-gold-aged/40 flex items-center justify-center text-gold-bright font-headline-sm font-semibold shadow-md text-base sm:text-lg">
                         {step.num}
                       </div>
-                      <h3 className="font-headline-sm text-headline-sm text-text-primary text-lg">
+                      <h3 className="font-headline-sm text-headline-sm text-text-primary text-base sm:text-lg">
                         {step.title}
                       </h3>
                       <p className="font-body-sm text-body-sm text-text-muted leading-relaxed">
@@ -1015,11 +1014,11 @@ export default function App() {
 
             {/* SEÇÃO 5: VALORES & COMPROMISSO ÉTICO (#valores) */}
             <section
-              className="w-full bg-surface py-space-3xl border-b border-subtle"
+              className="w-full bg-surface py-space-xl sm:py-space-2xl lg:py-space-3xl border-b border-subtle"
               id="valores"
             >
               <div className="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl lg:gap-space-2xl items-center">
                   {/* Esquerda: Síntese de Identidade Ética */}
                   <motion.div
                     initial={{ opacity: 0, x: -24 }}
@@ -1090,7 +1089,7 @@ export default function App() {
                           delay: i * 0.1,
                           ease: [0.16, 1, 0.3, 1],
                         }}
-                        className="card-interactive p-space-lg rounded bg-surface-card border border-subtle hover:border-gold-aged/60 flex flex-col cursor-pointer"
+                        className="card-interactive p-space-md sm:p-space-lg rounded bg-surface-card border border-subtle hover:border-gold-aged/60 flex flex-col cursor-pointer"
                       >
                         <div className="w-10 h-10 rounded bg-surface-coffee/20 flex items-center justify-center text-gold-bright mb-space-sm">
                           <span className="material-symbols-outlined text-xl">
@@ -1112,7 +1111,7 @@ export default function App() {
 
             {/* SEÇÃO 6: CONTATO & LOCALIZAÇÃO (#contato) */}
             <section
-              className="w-full bg-surface-graphite py-space-3xl"
+              className="w-full bg-surface-graphite py-space-xl sm:py-space-2xl lg:py-space-3xl"
               id="contato"
             >
               <div className="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
@@ -1142,7 +1141,7 @@ export default function App() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.15 }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="lg:col-span-7 bg-surface-card p-space-xl rounded border border-subtle shadow-2xl"
+                    className="lg:col-span-7 bg-surface-card p-space-md sm:p-space-xl rounded border border-subtle shadow-2xl"
                   >
                     <div className="flex items-center gap-space-sm mb-space-lg">
                       <span className="material-symbols-outlined text-gold-bright text-2xl">
@@ -1397,7 +1396,7 @@ export default function App() {
                     className="lg:col-span-5 flex flex-col justify-between space-y-space-lg"
                   >
                     {/* Detalhes de Localização e Horários */}
-                    <div className="p-space-xl rounded bg-surface-card border border-subtle shadow-xl space-y-space-md">
+                    <div className="p-space-md sm:p-space-xl rounded bg-surface-card border border-subtle shadow-xl space-y-space-md">
                       <h3 className="font-headline-sm text-headline-sm text-text-primary text-lg border-b border-subtle pb-space-sm">
                         Informações Oficiais
                       </h3>
@@ -1540,20 +1539,20 @@ export default function App() {
         transition={{ delay: 0.8, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.96 }}
-        className="fixed bottom-space-xl right-space-xl z-40"
+        className="fixed bottom-4 right-4 sm:bottom-space-xl sm:right-space-xl z-40"
       >
         <a
           aria-label="Canal institucional de atendimento WhatsApp"
-          className="group flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-surface-graphite text-gold-bright border border-subtle hover:bg-surface-card hover:text-text-primary transition-all shadow-[0_16px_36px_-6px_rgba(0,0,0,0.6)] animate-pulse-gold cursor-pointer"
+          className="group flex items-center gap-2 sm:gap-space-sm p-3 sm:px-space-md sm:py-space-sm rounded-full bg-surface-graphite text-gold-bright border border-subtle hover:bg-surface-card hover:text-text-primary transition-all shadow-[0_16px_36px_-6px_rgba(0,0,0,0.6)] animate-pulse-gold cursor-pointer"
           data-path="contato"
           href="#contato"
           onClick={(e) => handleNavigateSection(e, "#contato", "contato")}
         >
-          <span className="relative flex h-2 w-2">
+          <span className="relative flex h-2 w-2 flex-shrink-0">
             <span className="animate-beacon-dot absolute inline-flex h-full w-full rounded-full bg-gold-bright opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-bright"></span>
           </span>
-          <span className="material-symbols-outlined text-gold-bright group-hover:scale-110 transition-transform">
+          <span className="material-symbols-outlined text-gold-bright group-hover:scale-110 transition-transform text-lg sm:text-2xl">
             chat_bubble_outline
           </span>
           <span className="font-label-md text-label-md tracking-wide hidden sm:inline whitespace-nowrap">
@@ -1564,13 +1563,13 @@ export default function App() {
 
       {/* BANNER DE PRIVACIDADE E COOKIES (LGPD) */}
       {!cookieConsentDismissed && (
-        <div className="fixed bottom-0 left-0 right-0 z-30 p-space-sm sm:p-space-md pointer-events-none">
-          <div className="max-w-4xl mx-auto p-space-md rounded bg-surface-card/95 backdrop-blur-md border border-subtle shadow-2xl flex flex-col md:flex-row items-center justify-between gap-space-md pointer-events-auto">
+        <div className="fixed bottom-0 left-0 right-0 z-30 p-2 sm:p-space-sm md:p-space-md pointer-events-none">
+          <div className="max-w-4xl mx-auto p-3 sm:p-space-md rounded bg-surface-card/95 backdrop-blur-md border border-subtle shadow-2xl flex flex-col md:flex-row items-center justify-between gap-space-sm sm:gap-space-md pointer-events-auto">
             <div className="flex items-start gap-space-sm text-text-muted">
-              <span className="material-symbols-outlined text-gold-aged text-xl flex-shrink-0 mt-0.5">
+              <span className="material-symbols-outlined text-gold-aged text-lg sm:text-xl flex-shrink-0 mt-0.5">
                 shield
               </span>
-              <p className="font-legal-disclaimer text-legal-disclaimer">
+              <p className="font-legal-disclaimer text-[10px] sm:text-legal-disclaimer">
                 Este portal utiliza cookies estritamente necessários para
                 assegurar a estabilidade e integridade da navegação, em total
                 conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei
@@ -1580,7 +1579,7 @@ export default function App() {
             </div>
             <div className="flex items-center gap-space-sm flex-shrink-0 w-full md:w-auto justify-end">
               <a
-                className="font-legal-disclaimer text-legal-disclaimer text-gold-bright underline underline-offset-4 hover:text-text-primary transition-colors whitespace-nowrap"
+                className="font-legal-disclaimer text-[11px] sm:text-legal-disclaimer text-gold-bright underline underline-offset-4 hover:text-text-primary transition-colors whitespace-nowrap"
                 data-path="politica-de-privacidade"
                 href="#privacidade"
                 onClick={(e) => handleOpenScreen(e, "privacidade")}
@@ -1600,7 +1599,7 @@ export default function App() {
       )}
 
       {/* RODAPÉ INSTITUCIONAL */}
-      <footer className="w-full bg-surface-charcoal pt-space-3xl pb-space-2xl border-t border-subtle">
+      <footer className="w-full bg-surface-charcoal pt-space-xl sm:pt-space-2xl lg:pt-space-3xl pb-space-xl sm:pb-space-2xl border-t border-subtle">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

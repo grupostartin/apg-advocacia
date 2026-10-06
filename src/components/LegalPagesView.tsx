@@ -38,7 +38,7 @@ export const LegalPagesView: React.FC<LegalPagesViewProps> = ({
             </span>
           </div>
 
-          <div className="flex items-center gap-space-xs">
+          <div className="flex items-center gap-space-xs overflow-x-auto pb-1 max-w-full">
             <button
               type="button"
               onClick={() => onChangeScreen("informativo")}

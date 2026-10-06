@@ -91,8 +91,8 @@
   --font-label-caps: "Inter", system-ui, sans-serif;
 
   /* Font Sizes */
-  --text-display-hero-mobile: 36px;
-  --text-display-hero-mobile--line-height: 44px;
+  --text-display-hero-mobile: clamp(26px, 7.5vw, 36px);
+  --text-display-hero-mobile--line-height: clamp(34px, 9vw, 44px);
   --text-display-hero-mobile--letter-spacing: -0.01em;
   --text-display-hero-mobile--font-weight: 600;
 
@@ -106,8 +106,8 @@
   --text-headline-lg--letter-spacing: -0.01em;
   --text-headline-lg--font-weight: 500;
 
-  --text-headline-lg-mobile: 28px;
-  --text-headline-lg-mobile--line-height: 36px;
+  --text-headline-lg-mobile: clamp(22px, 5.5vw, 28px);
+  --text-headline-lg-mobile--line-height: clamp(30px, 6.8vw, 36px);
   --text-headline-lg-mobile--letter-spacing: 0em;
   --text-headline-lg-mobile--font-weight: 500;
 
@@ -147,16 +147,20 @@
 }
 
 @layer base {
-  html,
-  body {
-    margin: 0;
-    padding: 0;
+  html {
+    overflow-x: hidden;
     scroll-behavior: smooth;
   }
   body {
-    overscroll-behavior: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    overscroll-behavior-y: none;
     background-color: #141312;
     color: #e6e1df;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
