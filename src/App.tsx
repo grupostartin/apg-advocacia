@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { LegalPagesView, ScreenType } from "./components/LegalPagesView";
 import { PracticeAreaModal } from "./components/PracticeAreaModal";
@@ -41,6 +41,93 @@ export default function App() {
   });
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   const [protocolNumber, setProtocolNumber] = useState<string>("");
+  const heroGradientRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Animate words
+    const words = document.querySelectorAll<HTMLElement>(".word");
+    words.forEach((word) => {
+      const delay = parseInt(word.getAttribute("data-delay") || "0", 10);
+      setTimeout(() => {
+        word.style.animation = "word-appear 0.8s ease-out forwards";
+      }, delay);
+    });
+
+    // Mouse gradient
+    const gradient = heroGradientRef.current;
+    const heroSection = document.getElementById("inicio");
+
+    function onMouseMove(e: MouseEvent) {
+      if (gradient) {
+        gradient.style.left = e.clientX - 192 + "px";
+        gradient.style.top = e.clientY - 192 + "px";
+        gradient.style.opacity = "1";
+      }
+    }
+    function onMouseLeave() {
+      if (gradient) gradient.style.opacity = "0";
+    }
+
+    if (heroSection) {
+      heroSection.addEventListener("mousemove", onMouseMove);
+      heroSection.addEventListener("mouseleave", onMouseLeave);
+    }
+
+    // Word hover effects with golden glow
+    words.forEach((word) => {
+      word.addEventListener("mouseenter", () => {
+        word.style.textShadow = "0 0 20px rgba(212, 181, 114, 0.6)";
+      });
+      word.addEventListener("mouseleave", () => {
+        word.style.textShadow = "none";
+      });
+    });
+
+    // Click ripple effect
+    function onClick(e: MouseEvent) {
+      const ripple = document.createElement("div");
+      ripple.style.position = "fixed";
+      ripple.style.left = e.clientX + "px";
+      ripple.style.top = e.clientY + "px";
+      ripple.style.width = "4px";
+      ripple.style.height = "4px";
+      ripple.style.background = "rgba(212, 181, 114, 0.7)";
+      ripple.style.borderRadius = "50%";
+      ripple.style.transform = "translate(-50%, -50%)";
+      ripple.style.pointerEvents = "none";
+      ripple.style.zIndex = "9999";
+      ripple.style.animation = "pulse-glow 1s ease-out forwards";
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 1000);
+    }
+
+    if (heroSection) {
+      heroSection.addEventListener("click", onClick);
+    }
+
+    // Floating elements on scroll
+    let scrolled = false;
+    function onScroll() {
+      if (!scrolled) {
+        scrolled = true;
+        document.querySelectorAll<HTMLElement>(".floating-element").forEach((el, index) => {
+          setTimeout(() => {
+            el.style.animationPlayState = "running";
+          }, index * 200);
+        });
+      }
+    }
+    window.addEventListener("scroll", onScroll);
+
+    return () => {
+      if (heroSection) {
+        heroSection.removeEventListener("mousemove", onMouseMove);
+        heroSection.removeEventListener("mouseleave", onMouseLeave);
+        heroSection.removeEventListener("click", onClick);
+      }
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [currentScreen]);
 
   const formatPhone = (value: string) => {
     const digits = value.replace(/\D/g, "").slice(0, 11);
@@ -378,34 +465,83 @@ export default function App() {
               className="relative w-full overflow-hidden bg-surface-charcoal border-b border-subtle"
               id="inicio"
             >
-              {/* Ambient geometric lines */}
+              {/* Interactive SVG background grid with animated draw lines */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="hero-grid-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
+                    <path
+                      d="M 60 0 L 0 0 0 60"
+                      fill="none"
+                      stroke="rgba(184, 146, 74, 0.08)"
+                      strokeWidth="0.5"
+                    />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#hero-grid-pattern)" />
+                <line x1="0" y1="20%" x2="100%" y2="20%" className="grid-line" style={{ animationDelay: "0.5s" }} />
+                <line x1="0" y1="80%" x2="100%" y2="80%" className="grid-line" style={{ animationDelay: "1s" }} />
+                <line x1="20%" y1="0" x2="20%" y2="100%" className="grid-line" style={{ animationDelay: "1.5s" }} />
+                <line x1="80%" y1="0" x2="80%" y2="100%" className="grid-line" style={{ animationDelay: "2s" }} />
+                <line
+                  x1="50%"
+                  y1="0"
+                  x2="50%"
+                  y2="100%"
+                  className="grid-line"
+                  style={{ animationDelay: "2.5s", opacity: 0.05 }}
+                />
+                <line
+                  x1="0"
+                  y1="50%"
+                  x2="100%"
+                  y2="50%"
+                  className="grid-line"
+                  style={{ animationDelay: "3s", opacity: 0.05 }}
+                />
+                <circle cx="20%" cy="20%" r="2" className="detail-dot" style={{ animationDelay: "3s" }} />
+                <circle cx="80%" cy="20%" r="2" className="detail-dot" style={{ animationDelay: "3.2s" }} />
+                <circle cx="20%" cy="80%" r="2" className="detail-dot" style={{ animationDelay: "3.4s" }} />
+                <circle cx="80%" cy="80%" r="2" className="detail-dot" style={{ animationDelay: "3.6s" }} />
+                <circle cx="50%" cy="50%" r="1.5" className="detail-dot" style={{ animationDelay: "4s" }} />
+              </svg>
+
+              {/* Corner elements */}
+              <div className="corner-element top-8 left-8" style={{ animationDelay: "2.5s" }}>
+                <div className="absolute top-0 left-0 w-2 h-2 opacity-40 bg-gold-aged"></div>
+              </div>
+              <div className="corner-element top-8 right-8" style={{ animationDelay: "2.7s" }}>
+                <div className="absolute top-0 right-0 w-2 h-2 opacity-40 bg-gold-aged"></div>
+              </div>
+              <div className="corner-element bottom-8 left-8" style={{ animationDelay: "2.9s" }}>
+                <div className="absolute bottom-0 left-0 w-2 h-2 opacity-40 bg-gold-aged"></div>
+              </div>
+              <div className="corner-element bottom-8 right-8" style={{ animationDelay: "3.1s" }}>
+                <div className="absolute bottom-0 right-0 w-2 h-2 opacity-40 bg-gold-aged"></div>
+              </div>
+
+              {/* Floating ambient elements */}
+              <div className="floating-element" style={{ top: "25%", left: "15%", animationDelay: "3s" }}></div>
+              <div className="floating-element" style={{ top: "60%", left: "85%", animationDelay: "3.5s" }}></div>
+              <div className="floating-element" style={{ top: "40%", left: "10%", animationDelay: "4s" }}></div>
+              <div className="floating-element" style={{ top: "75%", left: "90%", animationDelay: "4.5s" }}></div>
+
+              {/* Ambient geometric light orbs */}
               <div className="absolute inset-0 pointer-events-none opacity-30">
                 <div className="absolute -top-40 right-1/4 w-96 h-96 rounded-full bg-surface-coffee/40 blur-3xl hero-ambient-orb-1"></div>
                 <div className="absolute top-1/2 left-10 w-72 h-72 rounded-full bg-gold-aged/20 blur-3xl hero-ambient-orb-2"></div>
-                <svg
-                  className="w-full h-full"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <pattern
-                      height="80"
-                      id="hero-grid"
-                      patternUnits="userSpaceOnUse"
-                      width="80"
-                    >
-                      <path
-                        d="M 80 0 L 0 0 0 80"
-                        fill="none"
-                        stroke="rgba(184, 146, 74, 0.08)"
-                        strokeWidth="0.75"
-                      ></path>
-                    </pattern>
-                  </defs>
-                  <rect fill="url(#hero-grid)" height="100%" width="100%"></rect>
-                </svg>
               </div>
 
-              <div className="relative max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-2xl lg:py-space-3xl">
+              {/* Mouse Following Glow */}
+              <div
+                id="mouse-gradient"
+                ref={heroGradientRef}
+                className="fixed pointer-events-none w-96 h-96 rounded-full blur-3xl transition-all duration-500 ease-out opacity-0 z-0"
+                style={{
+                  background: "radial-gradient(circle, rgba(184, 146, 74, 0.15) 0%, transparent 70%)",
+                }}
+              ></div>
+
+              <div className="relative z-10 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-2xl lg:py-space-3xl">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl lg:gap-space-2xl items-center">
                   {/* Coluna de Texto & Contexto */}
                   <div className="lg:col-span-7 flex flex-col items-start space-y-space-lg">
@@ -421,19 +557,37 @@ export default function App() {
                       </span>
                     </div>
 
-                    {/* Título Hero Nobre */}
+                    {/* Título Hero Nobre com animação de palavras e hover glow */}
                     <h1 className="hero-animate-title font-display-hero text-display-hero-mobile md:text-display-hero text-text-primary tracking-tight">
-                      <span className="bg-gradient-to-r from-text-primary via-gold-bright to-text-primary bg-[length:200%_auto] animate-gold-text bg-clip-text text-transparent">
-                        Advocacia ética, estratégica
-                      </span>{" "}
-                      e dedicada à excelência jurídica.
+                      <span className="word" data-delay="100">Advocacia</span>
+                      <span className="word" data-delay="220">ética,</span>
+                      <span className="word text-gold-bright" data-delay="360">estratégica</span>
+                      <span className="word" data-delay="500">e</span>
+                      <span className="word" data-delay="620">dedicada</span>
+                      <span className="word" data-delay="740">à</span>
+                      <span className="word" data-delay="860">excelência</span>
+                      <span className="word" data-delay="980">jurídica.</span>
                     </h1>
 
-                    {/* Subtítulo Informativo */}
+                    {/* Subtítulo Informativo com animação escalonada */}
                     <p className="hero-animate-desc font-body-lg text-body-lg text-text-muted max-w-2xl font-light leading-relaxed">
-                      Orientação e representação jurídica especializada, pautadas
-                      pelo rigor técnico, discrição e atendimento personalizado
-                      para pessoas e empresas.
+                      <span className="word" data-delay="1100">Orientação</span>
+                      <span className="word" data-delay="1180">e</span>
+                      <span className="word" data-delay="1260">representação</span>
+                      <span className="word" data-delay="1340">jurídica</span>
+                      <span className="word" data-delay="1420">especializada,</span>
+                      <span className="word" data-delay="1500">pautadas</span>
+                      <span className="word" data-delay="1580">pelo</span>
+                      <span className="word" data-delay="1660">rigor</span>
+                      <span className="word" data-delay="1740">técnico,</span>
+                      <span className="word" data-delay="1820">discrição</span>
+                      <span className="word" data-delay="1900">e</span>
+                      <span className="word" data-delay="1980">atendimento</span>
+                      <span className="word" data-delay="2060">personalizado</span>
+                      <span className="word" data-delay="2140">para</span>
+                      <span className="word" data-delay="2220">pessoas</span>
+                      <span className="word" data-delay="2300">e</span>
+                      <span className="word" data-delay="2380">empresas.</span>
                     </p>
 
                     {/* CTAs Discretos Conforme Provimento 205/2021 */}
