@@ -7,12 +7,22 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { LegalPagesView, ScreenType } from "./components/LegalPagesView";
 import { PracticeAreaModal } from "./components/PracticeAreaModal";
+import GooeyNav, { GooeyNavItem } from "./components/GooeyNav";
 import {
   HTML_IMAGES,
   InformativeArticle,
   PRACTICE_AREAS,
   PracticeArea,
 } from "./data/legalData";
+
+const navItems: GooeyNavItem[] = [
+  { label: "Início", href: "#inicio", id: "inicio" },
+  { label: "Sobre", href: "#sobre", id: "sobre" },
+  { label: "Áreas de Atuação", href: "#areas", id: "areas-de-atuacao" },
+  { label: "Como Atuamos", href: "#como-atuamos", id: "como-atuamos" },
+  { label: "Valores", href: "#valores", id: "valores" },
+  { label: "Contato", href: "#contato", id: "contato" },
+];
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<ScreenType>("home");
@@ -119,6 +129,28 @@ export default function App() {
     }
     window.addEventListener("scroll", onScroll);
 
+    // Scroll spy passivo para manter GooeyNav atualizado durante a rolagem
+    const handleWindowScroll = () => {
+      const sections = [
+        { id: "inicio", key: "inicio" },
+        { id: "sobre", key: "sobre" },
+        { id: "areas", key: "areas-de-atuacao" },
+        { id: "como-atuamos", key: "como-atuamos" },
+        { id: "valores", key: "valores" },
+        { id: "contato", key: "contato" },
+      ];
+      const scrollPos = window.scrollY + 140;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i].id);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveNav(sections[i].key);
+          break;
+        }
+      }
+    };
+    window.addEventListener("scroll", handleWindowScroll, { passive: true });
+
     return () => {
       if (heroSection) {
         heroSection.removeEventListener("mousemove", onMouseMove);
@@ -126,6 +158,7 @@ export default function App() {
         heroSection.removeEventListener("click", onClick);
       }
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", handleWindowScroll);
     };
   }, [currentScreen]);
 
@@ -151,29 +184,29 @@ export default function App() {
       setActiveNav(navKey);
     }
 
-    if (currentScreen !== "home") {
-      setCurrentScreen("home");
-      setTimeout(() => {
-        if (sectionId === "#" || sectionId === "#inicio") {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        } else {
-          const el = document.querySelector(sectionId);
-          el?.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 60);
-      return;
-    }
-
-    if (sectionId === "#" || sectionId === "#inicio") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
+    const scrollToTarget = () => {
+      if (sectionId === "#" || sectionId === "#inicio") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
       const targetId =
         sectionId === "#areas-de-atuacao" ? "#areas" : sectionId;
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
-        targetEl.scrollIntoView({ behavior: "smooth" });
+        const headerHeight = 85;
+        const targetTop =
+          targetEl.getBoundingClientRect().top + window.scrollY - headerHeight;
+        window.scrollTo({ top: Math.max(0, targetTop), behavior: "smooth" });
       }
+    };
+
+    if (currentScreen !== "home") {
+      setCurrentScreen("home");
+      setTimeout(scrollToTarget, 80);
+      return;
     }
+
+    scrollToTarget();
   };
 
   const handleOpenScreen = (
@@ -219,123 +252,43 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-gold-aged selection:text-surface-charcoal">
-      {/* HEADER FIXO */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-surface-charcoal/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)] border-b border-subtle/40 animate-fade-in-down">
-        <div className="h-20 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md">
-          <div className="flex items-center gap-space-md">
+      {/* HEADER TRANSPARENTE ULTRA-REFINADO E CENTRALIZADO */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0E0D0C]/40 backdrop-blur-xl transition-all duration-300 animate-fade-in-down border-b border-white/[0.06]">
+        <div className="h-20 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-4">
+          {/* LADO ESQUERDO: Marca Institucional */}
+          <div className="flex-1 flex items-center justify-start gap-3 min-w-0">
             <a
-              className="flex items-center gap-space-sm"
+              className="flex items-center gap-2 group cursor-pointer"
               data-path="inicio"
               href="#inicio"
               onClick={(e) => handleNavigateSection(e, "#inicio", "inicio")}
             >
-              <img
-                alt="Logo APG Advocacia"
-                className="h-8 w-auto object-contain"
-                referrerPolicy="no-referrer"
-                src={HTML_IMAGES.logo}
-              />
-              <span className="font-headline-sm text-headline-sm text-text-primary tracking-tight hidden sm:inline-block whitespace-nowrap">
+              <span className="font-headline-sm text-lg sm:text-xl text-text-primary tracking-tight font-serif font-semibold whitespace-nowrap group-hover:text-gold-bright transition-colors">
                 APG Advocacia
               </span>
             </a>
-            <div className="hidden xl:flex items-center pl-space-sm">
-              <span className="px-space-sm py-0.5 rounded font-label-caps text-label-caps text-gold-bright bg-surface-coffee/25 border border-subtle whitespace-nowrap">
+            <div className="hidden xl:flex items-center">
+              <span className="px-2.5 py-0.5 rounded-full font-label-caps text-[10px] text-gold-bright bg-[#013423]/60 border border-[#2fa87b]/30 whitespace-nowrap">
                 OAB/MG 000.000
               </span>
             </div>
           </div>
 
-          <nav
-            className="hidden lg:flex items-center gap-space-lg"
-            data-active-classes="text-gold-bright font-medium"
-          >
-            <a
-              aria-current={
-                currentScreen === "home" && activeNav === "inicio"
-                  ? "page"
-                  : undefined
-              }
-              className={`transition-colors whitespace-nowrap ${
-                currentScreen === "home" && activeNav === "inicio"
-                  ? "text-gold-bright font-medium"
-                  : "font-label-md text-label-md text-on-surface-variant hover:text-on-surface"
-              }`}
-              data-path="inicio"
-              href="#inicio"
-              onClick={(e) => handleNavigateSection(e, "#inicio", "inicio")}
-            >
-              Início
-            </a>
-            <a
-              className={`transition-colors whitespace-nowrap ${
-                currentScreen === "home" && activeNav === "sobre"
-                  ? "text-gold-bright font-medium"
-                  : "font-label-md text-label-md text-on-surface-variant hover:text-on-surface"
-              }`}
-              data-path="sobre"
-              href="#sobre"
-              onClick={(e) => handleNavigateSection(e, "#sobre", "sobre")}
-            >
-              Sobre
-            </a>
-            <a
-              className={`transition-colors whitespace-nowrap ${
-                currentScreen === "home" && activeNav === "areas-de-atuacao"
-                  ? "text-gold-bright font-medium"
-                  : "font-label-md text-label-md text-on-surface-variant hover:text-on-surface"
-              }`}
-              data-path="areas-de-atuacao"
-              href="#areas"
-              onClick={(e) =>
-                handleNavigateSection(e, "#areas", "areas-de-atuacao")
-              }
-            >
-              Áreas de Atuação
-            </a>
-            <a
-              className={`transition-colors whitespace-nowrap ${
-                currentScreen === "home" && activeNav === "como-atuamos"
-                  ? "text-gold-bright font-medium"
-                  : "font-label-md text-label-md text-on-surface-variant hover:text-on-surface"
-              }`}
-              data-path="como-atuamos"
-              href="#como-atuamos"
-              onClick={(e) =>
-                handleNavigateSection(e, "#como-atuamos", "como-atuamos")
-              }
-            >
-              Como Atuamos
-            </a>
-            <a
-              className={`transition-colors whitespace-nowrap ${
-                currentScreen === "home" && activeNav === "valores"
-                  ? "text-gold-bright font-medium"
-                  : "font-label-md text-label-md text-on-surface-variant hover:text-on-surface"
-              }`}
-              data-path="valores"
-              href="#valores"
-              onClick={(e) => handleNavigateSection(e, "#valores", "valores")}
-            >
-              Valores
-            </a>
-            <a
-              className={`transition-colors whitespace-nowrap ${
-                currentScreen === "home" && activeNav === "contato"
-                  ? "text-gold-bright font-medium"
-                  : "font-label-md text-label-md text-on-surface-variant hover:text-on-surface"
-              }`}
-              data-path="contato"
-              href="#contato"
-              onClick={(e) => handleNavigateSection(e, "#contato", "contato")}
-            >
-              Contato
-            </a>
-          </nav>
+          {/* CENTRO: GooeyNav Rigorosamente Centralizado */}
+          <div className="hidden lg:flex items-center justify-center flex-shrink-0">
+            <GooeyNav
+              items={navItems}
+              activeNavId={activeNav}
+              onItemClick={(e, item) => {
+                handleNavigateSection(e, item.href, item.id || item.href.replace("#", ""));
+              }}
+            />
+          </div>
 
-          <div className="flex items-center gap-space-md">
+          {/* LADO DIREITO: Botão de Contato & Perfil */}
+          <div className="flex-1 flex items-center justify-end gap-3 min-w-0">
             <a
-              className="hidden sm:inline-flex items-center justify-center px-space-md py-space-sm rounded bg-primary-container text-on-primary-fixed font-label-md text-label-md hover:bg-gold-bright transition-colors shadow-sm tracking-wide whitespace-nowrap"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full bg-gradient-to-r from-[#013423] to-[#0a4831] border border-[#2fa87b]/40 text-white font-label-md text-xs font-medium hover:border-[#2fa87b]/80 hover:shadow-[0_0_15px_rgba(47,168,123,0.3)] transition-all shadow-sm tracking-wide whitespace-nowrap"
               data-path="contato"
               href="#contato"
               onClick={(e) => handleNavigateSection(e, "#contato", "contato")}
@@ -346,11 +299,11 @@ export default function App() {
               type="button"
               onClick={() => setShowLawyerProfile(true)}
               title="Credenciais Institucionais — Dra. Ana Paula Gonçalves"
-              className="rounded-full focus:outline-none focus:ring-1 focus:ring-gold-bright cursor-pointer"
+              className="rounded-full focus:outline-none focus:ring-1 focus:ring-gold-bright cursor-pointer flex-shrink-0"
             >
               <img
                 alt="Dra. Ana Paula Gonçalves"
-                className="w-8 h-8 rounded-full object-cover border border-subtle hover:border-gold-bright transition-colors"
+                className="w-8 h-8 rounded-full object-cover border border-[#2fa87b]/40 hover:border-gold-bright transition-colors"
                 referrerPolicy="no-referrer"
                 src={HTML_IMAGES.lawyerPortrait}
               />
@@ -592,14 +545,14 @@ export default function App() {
                     {/* CTAs Discretos Conforme Provimento 205/2021 */}
                     <div className="hero-animate-cta flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm sm:gap-space-md pt-space-xs w-full sm:w-auto">
                       <a
-                        className="btn-shimmer inline-flex items-center justify-center px-space-lg sm:px-space-xl py-3 rounded bg-gradient-to-r from-gold-aged to-primary-container text-surface-charcoal font-label-md text-label-md font-semibold tracking-wider uppercase hover:from-gold-bright hover:to-gold-aged transition-all shadow-[0_4px_14px_rgba(184,146,74,0.25)] hover:shadow-[0_6px_20px_rgba(212,181,114,0.4)] hover:-translate-y-0.5 text-center cursor-pointer"
+                        className="btn-shimmer inline-flex items-center justify-center px-space-lg sm:px-space-xl py-3.5 rounded-full bg-gradient-to-r from-[#013423] via-[#0d5c41] to-[#013423] text-white font-label-md text-label-md font-semibold tracking-wider uppercase border border-[#2fa87b]/70 hover:from-[#0d5c41] hover:to-[#168058] hover:border-[#38ef7d] transition-all shadow-[0_4px_22px_rgba(1,52,35,0.7)] hover:shadow-[0_6px_28px_rgba(47,168,123,0.6)] hover:-translate-y-0.5 text-center cursor-pointer group"
                         href="#contato"
                         onClick={(e) =>
                           handleNavigateSection(e, "#contato", "contato")
                         }
                       >
-                        <span>Entre em contato</span>
-                        <span className="material-symbols-outlined text-base ml-2">
+                        <span className="text-white drop-shadow-sm font-semibold tracking-wide">Entre em contato</span>
+                        <span className="material-symbols-outlined text-base ml-2 text-white group-hover:translate-x-1 transition-transform">
                           arrow_forward
                         </span>
                       </a>
@@ -668,7 +621,7 @@ export default function App() {
                       >
                         <img
                           alt="Dra. Ana Paula Gonçalves - Advogada Titular"
-                          className="w-full h-[380px] sm:h-[440px] md:h-[480px] object-cover object-top filter brightness-95 contrast-105 group-hover:scale-[1.01] transition-transform duration-300"
+                          className="w-full h-[380px] sm:h-[440px] md:h-[480px] object-cover object-[center_20%] filter brightness-95 contrast-105 group-hover:scale-[1.01] transition-transform duration-300"
                           referrerPolicy="no-referrer"
                           src={HTML_IMAGES.lawyerPortrait}
                         />
@@ -1336,11 +1289,11 @@ export default function App() {
                       </div>
 
                       <button
-                        className="w-full py-3 rounded bg-gradient-to-r from-gold-aged to-primary-container text-surface-charcoal font-label-md text-label-md font-semibold tracking-wider uppercase hover:from-gold-bright hover:to-gold-aged transition-all shadow-[0_4px_14px_rgba(184,146,74,0.25)] flex items-center justify-center gap-2 cursor-pointer"
+                        className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#013423] via-[#0d5c41] to-[#013423] text-white font-label-md text-label-md font-semibold tracking-wider uppercase border border-[#2fa87b]/70 hover:from-[#0d5c41] hover:to-[#168058] hover:border-[#38ef7d] transition-all shadow-[0_4px_22px_rgba(1,52,35,0.7)] hover:shadow-[0_6px_28px_rgba(47,168,123,0.6)] flex items-center justify-center gap-2 cursor-pointer group"
                         type="submit"
                       >
-                        <span>Enviar Mensagem Institucional</span>
-                        <span className="material-symbols-outlined text-base">
+                        <span className="text-white drop-shadow-sm font-semibold tracking-wide">Enviar Mensagem Institucional</span>
+                        <span className="material-symbols-outlined text-base text-white group-hover:translate-x-1 transition-transform">
                           send
                         </span>
                       </button>

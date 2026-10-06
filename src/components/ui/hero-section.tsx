@@ -3,16 +3,16 @@
 import React, { useEffect, useRef } from "react";
 
 const colors = {
-  50: "#f8f7f5",
-  100: "#e6e1d7",
-  200: "#c8b4a0",
-  300: "#a89080",
-  400: "#8a7060",
-  500: "#6b5545",
-  600: "#544237",
-  700: "#3c4237",
-  800: "#2a2e26",
-  900: "#1a1d18",
+  50: "#f4fbf7",
+  100: "#e1f5eb",
+  200: "#2fa87b",
+  300: "#20805d",
+  400: "#156548",
+  500: "#0d4d36",
+  600: "#083b29",
+  700: "#04281c",
+  800: "#021c13",
+  900: "#013423",
 };
 
 export function Component() {
@@ -46,7 +46,7 @@ export function Component() {
     // Word hover effects
     words.forEach((word) => {
       word.addEventListener("mouseenter", () => {
-        word.style.textShadow = "0 0 20px rgba(200, 180, 160, 0.5)";
+        word.style.textShadow = "0 0 20px rgba(47, 168, 123, 0.5)";
       });
       word.addEventListener("mouseleave", () => {
         word.style.textShadow = "none";
@@ -61,7 +61,7 @@ export function Component() {
       ripple.style.top = e.clientY + "px";
       ripple.style.width = "4px";
       ripple.style.height = "4px";
-      ripple.style.background = "rgba(200, 180, 160, 0.6)";
+      ripple.style.background = "rgba(47, 168, 123, 0.6)";
       ripple.style.borderRadius = "50%";
       ripple.style.transform = "translate(-50%, -50%)";
       ripple.style.pointerEvents = "none";
@@ -95,7 +95,7 @@ export function Component() {
 
   return (
     <div
-      className="min-h-screen bg-gradient-to-br from-[#1a1d18] via-black to-[#2a2e26] text-[#e6e1d7] font-primary overflow-hidden relative w-full"
+      className="min-h-screen bg-gradient-to-br from-[#061f15] via-black to-[#013423] text-[#e6e1d7] font-primary overflow-hidden relative w-full"
     >
       <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -103,7 +103,7 @@ export function Component() {
             <path
               d="M 60 0 L 0 0 0 60"
               fill="none"
-              stroke="rgba(200,180,160,0.08)"
+              stroke="rgba(47,168,123,0.08)"
               strokeWidth="0.5"
             />
           </pattern>

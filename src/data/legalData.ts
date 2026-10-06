@@ -1,7 +1,6 @@
 export const HTML_IMAGES = {
-  logo: "https://lh3.googleusercontent.com/aida/AEtjO1Xmq_f27nkQ2UBDqnMAeiEYKADw1IcrMSs76cGZe77_DiheLTXLaYz1l_nNSU8YzSqxHy8a_jPj-izfw9XGAt5-yz_FvgzH6W6E3HrvaI8TlgkGQVHbXCOa221vP4B15oNcXGeOcLD_pnDZsZ8_j6tgyrANvN-nAz322vtT2jF0rr1x6SS6RQcHGVPImHkKzs9hFtmmu1ONKxaGFeOhkfZM2sYKXyVT8te4UbJfLFkWJItkHiqxt69VtDzM",
-  lawyerPortrait:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDOReD36WrzN9JqlUO3yMEyXja4f8GTYKmLFjsKLfNNxqQbf8apLOqhny-kS41vqjRDjmUaph71KDSzRRCBBjkIUVbgB3dnaUTnk9kB1NZ5Uxnro-3UbdeGZewlYazjdWZlX_w5gDzavAyuOh02qvyah81koG_hoYXxSCMOXB2cgpjA17Prm5SKbHPvh7Pho2bUbMCaJcja4oMUM0mStg0AsnIG_oW5DsRt23xuX20tyyG0S5LxOfk7AA",
+  logo: "/Logotipo APG em Verde Floresta.png",
+  lawyerPortrait: "/Selfie elegante com tranças e óculos.png",
   mapFariaLima:
     "https://lh3.googleusercontent.com/aida-public/AB6AXuBb1Y6dmbHwoToFF2BSdK9VLbBp2ZwCFvURzXpL0wVGPUgL-aTTx7cu2BVxwe45mdsrdfr2xta6sdi3RgXtRC2sDZh9sAhrGzOkvPclFJfhXEdIhJLD5LdVVGRwWOh6-sWIf7Jb4VCxi4RCSoER0n1O6ZpsMhuJ62RRkD24mBoFQF0epHbDUM9CF0uqi4TP3jTF3toNTyBDPKR0ZOg9cj9m0t4tSuxwH7OSax7kH2pK-Sdz1wAtlV5ABQ",
 };

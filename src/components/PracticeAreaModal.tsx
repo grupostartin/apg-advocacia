@@ -207,7 +207,7 @@ export const PracticeAreaModal: React.FC<PracticeAreaModalProps> = ({
                   src={HTML_IMAGES.lawyerPortrait}
                   alt="Dra. Ana Paula Gonçalves"
                   referrerPolicy="no-referrer"
-                  className="w-16 h-16 rounded object-cover object-top border border-subtle"
+                  className="w-16 h-16 rounded-full object-cover object-[center_20%] border border-[#2fa87b]/40 shadow-sm"
                 />
                 <div>
                   <span className="font-label-caps text-label-caps text-gold-bright uppercase block">
