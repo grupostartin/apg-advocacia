@@ -132,10 +132,10 @@ export const PracticeAreaModal: React.FC<PracticeAreaModalProps> = ({
                 <button
                   type="button"
                   onClick={() => onConsultArea(selectedArea.formValue)}
-                  className="px-space-lg py-2.5 rounded bg-gradient-to-r from-gold-aged to-primary-container text-surface-charcoal font-label-md text-label-md font-semibold uppercase tracking-wider hover:from-gold-bright hover:to-gold-aged transition-all cursor-pointer inline-flex items-center justify-center gap-1.5 whitespace-nowrap"
+                  className="px-space-lg py-2.5 rounded-full bg-gradient-to-r from-[#013423] via-[#0d5c41] to-[#013423] text-white font-label-md text-label-md font-semibold uppercase tracking-wider border border-[#2fa87b]/70 hover:from-[#0d5c41] hover:to-[#168058] hover:border-[#38ef7d] transition-all shadow-[0_4px_20px_rgba(1,52,35,0.7)] hover:shadow-[0_6px_25px_rgba(47,168,123,0.6)] cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap group"
                 >
-                  <span>Solicitar Atendimento nesta Área</span>
-                  <span className="material-symbols-outlined text-base">arrow_forward</span>
+                  <span className="text-white drop-shadow-sm font-semibold tracking-wide">Solicitar Atendimento nesta Área</span>
+                  <span className="material-symbols-outlined text-base text-white group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </button>
               </div>
             </div>
