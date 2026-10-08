@@ -1,6 +1,6 @@
 export const HTML_IMAGES = {
   logo: "/Logotipo APG em Verde Floresta.png",
-  lawyerPortrait: "/Selfie elegante com tranças e óculos.png",
+  lawyerPortrait: "/imagem_20261006200811.jpg",
   mapFariaLima:
     "https://lh3.googleusercontent.com/aida-public/AB6AXuBb1Y6dmbHwoToFF2BSdK9VLbBp2ZwCFvURzXpL0wVGPUgL-aTTx7cu2BVxwe45mdsrdfr2xta6sdi3RgXtRC2sDZh9sAhrGzOkvPclFJfhXEdIhJLD5LdVVGRwWOh6-sWIf7Jb4VCxi4RCSoER0n1O6ZpsMhuJ62RRkD24mBoFQF0epHbDUM9CF0uqi4TP3jTF3toNTyBDPKR0ZOg9cj9m0t4tSuxwH7OSax7kH2pK-Sdz1wAtlV5ABQ",
 };
@@ -13,6 +13,7 @@ export interface PracticeArea {
   title: string;
   description: string;
   footerLabel: string;
+  tags: string[];
   overview: string;
   preventiveScope: string[];
   contentiousScope: string[];
@@ -30,8 +31,9 @@ export const PRACTICE_AREAS: PracticeArea[] = [
     icon: "description",
     title: "Direito Civil & Contratos",
     description:
-      "Elaboração, análise crítica e revisão minuciosa de instrumentos contratuais, bem como resolução estratégica de disputas de ordem patrimonial e obrigacional.",
+      "Estruturação e revisão de instrumentos contratuais, obrigações e resolução estratégica de disputas patrimoniais.",
     footerLabel: "Consultoria & Contencioso",
+    tags: ["Contratos", "Obrigações", "Indenizações"],
     overview:
       "A atuação em Direito Civil e Contratos visa conferir segurança jurídica às relações negociais e patrimoniais, prevenindo litígios por meio de cláusulas claras, equilibradas e aderentes à legislação vigente e à jurisprudência dos tribunais superiores.",
     preventiveScope: [
@@ -66,8 +68,9 @@ export const PRACTICE_AREAS: PracticeArea[] = [
     icon: "family_restroom",
     title: "Direito de Família & Sucessões",
     description:
-      "Planejamento sucessório patrimonial, inventários judiciais e extrajudiciais, divórcios e questões sensíveis conduzidas com discrição, empatia e segurança jurídica.",
-    footerLabel: "Planejamento & Acolhimento",
+      "Planejamento patrimonial familiar, inventários judiciais e extrajudiciais, divórcios e mediação com discrição e acolhimento.",
+    footerLabel: "Planejamento & Sucessão",
+    tags: ["Inventários", "Divórcios", "Planejamento Sucessório"],
     overview:
       "As demandas familiares e sucessórias exigem sensibilidade humana aliada ao rigor técnico. O escritório prioriza soluções que preservem a dignidade dos envolvidos, a estabilidade patrimonial da família e o sigilo absoluto das informações.",
     preventiveScope: [
@@ -102,8 +105,9 @@ export const PRACTICE_AREAS: PracticeArea[] = [
     icon: "apartment",
     title: "Direito Imobiliário",
     description:
-      "Segurança jurídica em transações de compra e venda, contratos de locação comercial e residencial, regularização registral, posse e incorporações.",
+      "Segurança jurídica em compra e venda, contratos de locação comercial e residencial, regularização registral e posse.",
     footerLabel: "Due Diligence & Registros",
+    tags: ["Due Diligence", "Locações", "Regularização Registral"],
     overview:
       "Operações imobiliárias envolvem patrimônio expressivo e exigem verificação criteriosa de certidões, cadeia dominial e passivos ocultos. A banca assessora compradores, vendedores, locadores e investidores em todas as etapas do negócio.",
     preventiveScope: [
@@ -138,8 +142,9 @@ export const PRACTICE_AREAS: PracticeArea[] = [
     icon: "corporate_fare",
     title: "Direito Empresarial & Societário",
     description:
-      "Assessoria contínua para micro, pequenas e médias empresas, elaboração de acordos societários, governança corporativa e adequação às normas regulatórias.",
+      "Consultoria contínua para empresas, acordos de sócios, governança corporativa e prevenção de passivos jurídicos.",
     footerLabel: "Governança & Negócios",
+    tags: ["Acordos de Sócios", "Governança", "Contratos Comerciais"],
     overview:
       "A consultoria empresarial e societária apoia sócios e administradores na estruturação jurídica de seus negócios, prevenindo impasses societários, protegendo ativos operacionais e garantindo conformidade contratual e regulatória.",
     preventiveScope: [
@@ -174,8 +179,9 @@ export const PRACTICE_AREAS: PracticeArea[] = [
     icon: "gavel",
     title: "Direito do Consumidor",
     description:
-      "Atuação em relações de consumo complexas, responsabilidade civil por vício de produtos ou serviços, e representação em procedimentos administrativos e judiciais.",
-    footerLabel: "Equilíbrio & Reparação",
+      "Defesa técnica em relações de consumo de alta complexidade, contratos de adesão, conformidade e responsabilidade civil.",
+    footerLabel: "Equilíbrio & Conformidade",
+    tags: ["Defesa Técnica", "Contratos de Adesão", "Responsabilidade Civil"],
     overview:
       "Com base no Código de Defesa do Consumidor (Lei nº 8.078/1990), o escritório atua tanto na defesa de consumidores lesados em operações de alta relevância quanto na consultoria preventiva para empresas que buscam adequar suas práticas comerciais.",
     preventiveScope: [
@@ -210,8 +216,9 @@ export const PRACTICE_AREAS: PracticeArea[] = [
     icon: "handshake",
     title: "Resolução Consensual de Conflitos",
     description:
-      "Mediação qualificada, conciliação e negociações extrajudiciais estratégicas direcionadas a desfechos céleres, econômicos e sustentáveis no longo prazo.",
+      "Mediação qualificada e negociações extrajudiciais com foco em desfechos céleres, econômicos e seguros.",
     footerLabel: "Mediação & Negociação",
+    tags: ["Mediação", "Transações Extrajudiciais", "Negociação"],
     overview:
       "Em sintonia com o Código de Processo Civil e a Lei de Mediação (Lei nº 13.140/2015), o escritório prioriza métodos adequados de solução de controvérsias, buscando construir acordos sólidos que preservem o tempo, os recursos e a reputação das partes.",
     preventiveScope: [

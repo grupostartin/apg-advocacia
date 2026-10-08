@@ -44,6 +44,18 @@ export const PracticeAreaModal: React.FC<PracticeAreaModalProps> = ({
                 <h2 className="font-headline-md text-headline-sm sm:text-headline-md text-text-primary">
                   {selectedArea.title}
                 </h2>
+                {selectedArea.tags && (
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {selectedArea.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 rounded text-[10px] font-label-caps bg-surface-coffee/40 border border-[#2fa87b]/25 text-gold-bright/90"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
               <button
                 type="button"
@@ -185,7 +197,7 @@ export const PracticeAreaModal: React.FC<PracticeAreaModalProps> = ({
 
             <div className="pt-space-md border-t border-subtle flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-sm">
               <span className="font-legal-disclaimer text-legal-disclaimer text-text-muted">
-                Autoria: Dra. Ana Paula Gonçalves (OAB/MG 000.000) · Caráter educativo.
+                Autoria: Dra. Ana Paula Gomes (OAB/MG 000.000) · Caráter educativo.
               </span>
               <button
                 type="button"
@@ -205,7 +217,7 @@ export const PracticeAreaModal: React.FC<PracticeAreaModalProps> = ({
               <div className="flex items-center gap-space-md">
                 <img
                   src={HTML_IMAGES.lawyerPortrait}
-                  alt="Dra. Ana Paula Gonçalves"
+                  alt="Dra. Ana Paula Gomes"
                   referrerPolicy="no-referrer"
                   className="w-16 h-16 rounded-full object-cover object-[center_20%] border border-[#2fa87b]/40 shadow-sm"
                 />
@@ -214,7 +226,7 @@ export const PracticeAreaModal: React.FC<PracticeAreaModalProps> = ({
                     Sócia Titular &amp; Fundadora
                   </span>
                   <h2 className="font-headline-md text-headline-sm sm:text-headline-md text-text-primary">
-                    Dra. Ana Paula Gonçalves
+                    Dra. Ana Paula Gomes
                   </h2>
                   <p className="font-body-sm text-body-sm text-text-muted">
                     Inscrição Regular OAB/MG 000.000 · Belo Horizonte/MG
@@ -233,7 +245,7 @@ export const PracticeAreaModal: React.FC<PracticeAreaModalProps> = ({
 
             <div className="space-y-space-md font-body-md text-body-md text-text-muted leading-relaxed">
               <p>
-                Advogada e Consultora Jurídica com atuação dedicada ao Direito Civil, Empresarial, Imobiliário e Direito das Famílias e Sucessões em Belo Horizonte/MG e em âmbito nacional. Fundadora da <strong className="text-text-primary font-medium">Ana Paula Gonçalves Sociedade Individual de Advocacia</strong>, conduz pessoalmente o planejamento estratégico de cada demanda confiada ao escritório.
+                Advogada e Consultora Jurídica com atuação dedicada ao Direito Civil, Empresarial, Imobiliário e Direito das Famílias e Sucessões em Belo Horizonte/MG e em âmbito nacional. Fundadora da <strong className="text-text-primary font-medium">Ana Paula Gomes Sociedade Individual de Advocacia</strong>, conduz pessoalmente o planejamento estratégico de cada demanda confiada ao escritório.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
                 <div className="p-space-md rounded bg-surface-graphite border border-subtle">

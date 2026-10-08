@@ -102,7 +102,7 @@ export const LegalPagesView: React.FC<LegalPagesViewProps> = ({
                   Controladora
                 </span>
                 <p className="font-body-sm text-body-sm text-text-primary font-medium">
-                  Ana Paula Gonçalves Sociedade Individual de Advocacia
+                  Ana Paula Gomes Sociedade Individual de Advocacia
                 </p>
                 <p className="font-legal-disclaimer text-legal-disclaimer text-text-muted mt-1">
                   Inscrição OAB/MG 000.000 · Belo Horizonte/MG
@@ -246,7 +246,7 @@ export const LegalPagesView: React.FC<LegalPagesViewProps> = ({
                   4. Propriedade Intelectual
                 </h2>
                 <p className="font-body-md text-body-md">
-                  Os textos, elementos gráficos, identidade visual e estrutura editorial deste portal pertencem à <strong className="text-text-primary font-medium">Ana Paula Gonçalves Sociedade Individual de Advocacia</strong>, sendo vedada a reprodução comercial desautorizada.
+                  Os textos, elementos gráficos, identidade visual e estrutura editorial deste portal pertencem à <strong className="text-text-primary font-medium">Ana Paula Gomes Sociedade Individual de Advocacia</strong>, sendo vedada a reprodução comercial desautorizada.
                 </p>
               </section>
             </div>

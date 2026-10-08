@@ -298,11 +298,11 @@ export default function App() {
             <button
               type="button"
               onClick={() => setShowLawyerProfile(true)}
-              title="Credenciais Institucionais — Dra. Ana Paula Gonçalves"
+              title="Credenciais Institucionais — Dra. Ana Paula Gomes"
               className="rounded-full focus:outline-none focus:ring-1 focus:ring-gold-bright cursor-pointer flex-shrink-0"
             >
               <img
-                alt="Dra. Ana Paula Gonçalves"
+                alt="Dra. Ana Paula Gomes"
                 className="w-8 h-8 rounded-full object-cover border border-[#2fa87b]/40 hover:border-gold-bright transition-colors"
                 referrerPolicy="no-referrer"
                 src={HTML_IMAGES.lawyerPortrait}
@@ -512,34 +512,15 @@ export default function App() {
                     {/* Título Hero Nobre com animação de palavras e hover glow */}
                     <h1 className="hero-animate-title font-display-hero text-display-hero-mobile md:text-display-hero text-text-primary tracking-tight leading-tight">
                       <span className="word" data-delay="100">Advocacia</span>
-                      <span className="word" data-delay="220">ética,</span>
-                      <span className="word text-gold-bright" data-delay="360">estratégica</span>
-                      <span className="word" data-delay="500">e</span>
-                      <span className="word" data-delay="620">dedicada</span>
-                      <span className="word" data-delay="740">à</span>
-                      <span className="word" data-delay="860">excelência</span>
-                      <span className="word" data-delay="980">jurídica.</span>
+                      <span className="word text-gold-bright" data-delay="220">estratégica,</span>
+                      <span className="word" data-delay="340">consultiva</span>
+                      <span className="word" data-delay="460">e</span>
+                      <span className="word" data-delay="580">ética.</span>
                     </h1>
 
-                    {/* Subtítulo Informativo com animação escalonada */}
+                    {/* Subtítulo Informativo Direto e Dinâmico */}
                     <p className="hero-animate-desc font-body-lg text-body-md sm:text-body-lg text-text-muted max-w-2xl font-light leading-relaxed">
-                      <span className="word" data-delay="1100">Orientação</span>
-                      <span className="word" data-delay="1180">e</span>
-                      <span className="word" data-delay="1260">representação</span>
-                      <span className="word" data-delay="1340">jurídica</span>
-                      <span className="word" data-delay="1420">especializada,</span>
-                      <span className="word" data-delay="1500">pautadas</span>
-                      <span className="word" data-delay="1580">pelo</span>
-                      <span className="word" data-delay="1660">rigor</span>
-                      <span className="word" data-delay="1740">técnico,</span>
-                      <span className="word" data-delay="1820">discrição</span>
-                      <span className="word" data-delay="1900">e</span>
-                      <span className="word" data-delay="1980">atendimento</span>
-                      <span className="word" data-delay="2060">personalizado</span>
-                      <span className="word" data-delay="2140">para</span>
-                      <span className="word" data-delay="2220">pessoas</span>
-                      <span className="word" data-delay="2300">e</span>
-                      <span className="word" data-delay="2380">empresas.</span>
+                      Orientação jurídica especializada, rigor técnico e discrição absoluta na prevenção de litígios e salvaguarda patrimonial de pessoas e empresas.
                     </p>
 
                     {/* CTAs Discretos Conforme Provimento 205/2021 */}
@@ -620,7 +601,7 @@ export default function App() {
                         className="relative rounded overflow-hidden bg-surface-card border border-subtle shadow-[0_20px_50px_rgba(0,0,0,0.8)] cursor-pointer group"
                       >
                         <img
-                          alt="Dra. Ana Paula Gonçalves - Advogada Titular"
+                          alt="Dra. Ana Paula Gomes - Advogada Titular"
                           className="w-full h-[380px] sm:h-[440px] md:h-[480px] object-cover object-[center_20%] filter brightness-95 contrast-105 group-hover:scale-[1.01] transition-transform duration-300"
                           referrerPolicy="no-referrer"
                           src={HTML_IMAGES.lawyerPortrait}
@@ -632,7 +613,7 @@ export default function App() {
                           <div className="flex items-center justify-between gap-2">
                             <div>
                               <h3 className="font-headline-sm text-sm sm:text-headline-sm text-text-primary">
-                                Dra. Ana Paula Gonçalves
+                                Dra. Ana Paula Gomes
                               </h3>
                               <p className="font-body-sm text-xs sm:text-body-sm text-text-muted">
                                 Advogada e Consultora Jurídica
@@ -652,123 +633,95 @@ export default function App() {
 
             {/* SEÇÃO 2: SOBRE (#sobre) */}
             <section
-              className="w-full bg-surface-graphite py-space-xl sm:py-space-2xl lg:py-space-3xl border-b border-subtle"
+              className="w-full bg-surface-graphite py-space-xl sm:py-space-2xl border-b border-subtle"
               id="sobre"
             >
               <div className="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
-                  {/* Coluna Esquerda: Citação e Visual Arquitetural */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl lg:gap-space-2xl items-center">
+                  {/* Coluna Esquerda: Citação e Credenciais Rápidas */}
                   <motion.div
-                    className="lg:col-span-5 flex flex-col space-y-space-xl"
-                    initial={{ opacity: 0, x: -36 }}
+                    className="lg:col-span-5 flex flex-col space-y-space-md"
+                    initial={{ opacity: 0, x: -28 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.15 }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    <div className="relative p-space-xl rounded bg-surface-card border border-subtle shadow-xl">
-                      <span className="material-symbols-outlined text-gold-bright text-4xl mb-space-sm opacity-80 block">
+                    <div className="relative p-space-lg sm:p-space-xl rounded bg-surface-card border border-subtle shadow-xl group hover:border-gold-bright/60 transition-colors">
+                      <span className="material-symbols-outlined text-gold-bright text-3xl mb-space-xs opacity-90 block">
                         balance
                       </span>
-                      <blockquote className="font-headline-sm text-headline-sm text-text-primary italic leading-relaxed">
-                        “A advocacia não é mero instrumento processual; é o
-                        exercício contínuo da escuta qualificada, da prudência
-                        técnica e da salvaguarda intransigente da dignidade e
-                        dos direitos de cada constituinte.”
+                      <blockquote className="font-headline-sm text-base sm:text-headline-sm text-text-primary italic leading-relaxed">
+                        “A advocacia é o exercício contínuo da escuta atenta, da prudência técnica e da salvaguarda intransigente de direitos.”
                       </blockquote>
                       <div className="mt-space-md pt-space-md border-t border-subtle flex items-center justify-between">
                         <div>
                           <span className="font-label-md text-label-md text-text-primary font-medium block">
-                            Dra. Ana Paula Gonçalves
+                            Dra. Ana Paula Gomes
                           </span>
-                          <span className="font-body-sm text-body-sm text-text-muted">
-                            Fundadora do Escritório
+                          <span className="font-body-sm text-xs sm:text-body-sm text-text-muted">
+                            Advogada Titular · OAB/MG 000.000
                           </span>
                         </div>
                         <button
                           type="button"
                           onClick={() => setShowLawyerProfile(true)}
-                          title="Ver credenciais institucionais"
-                          className="w-8 h-8 rounded-full bg-surface-coffee/40 border border-subtle hover:border-gold-bright flex items-center justify-center text-gold-bright text-xs transition-colors cursor-pointer"
+                          className="px-3 py-1 rounded-full bg-surface-coffee/40 border border-subtle hover:border-gold-bright text-gold-bright text-xs font-label-caps transition-colors cursor-pointer"
                         >
-                          APG
+                          Ver Perfil
                         </button>
                       </div>
                     </div>
 
-                    {/* Indicador Gráfico Suave de Rigor Metodológico */}
-                    <div className="p-space-lg rounded bg-surface-charcoal border border-subtle/60 flex items-center gap-space-md">
-                      <div className="w-12 h-12 rounded bg-surface-coffee/30 flex items-center justify-center flex-shrink-0 text-gold-aged">
-                        <span className="material-symbols-outlined text-2xl">
-                          verified_user
-                        </span>
-                      </div>
-                      <div>
-                        <h4 className="font-label-md text-label-md text-text-primary font-medium">
-                          Deontologia e Compromisso
-                        </h4>
-                        <p className="font-body-sm text-body-sm text-text-muted mt-0.5">
-                          Atuação pautada estritamente no Código de Ética e
-                          Disciplina da Ordem dos Advogados do Brasil.
-                        </p>
-                      </div>
+                    <div className="p-space-md rounded bg-surface-charcoal/80 border border-subtle/50 flex items-center gap-space-sm">
+                      <span className="material-symbols-outlined text-gold-bright text-xl flex-shrink-0">
+                        verified_user
+                      </span>
+                      <p className="font-body-sm text-xs sm:text-body-sm text-text-muted">
+                        Atuação pautada estritamente no Código de Ética e Disciplina da OAB.
+                      </p>
                     </div>
                   </motion.div>
 
-                  {/* Coluna Direita: Trajetória e Pilares Estratégicos */}
+                  {/* Coluna Direita: Trajetória Direta e Pilares Estratégicos */}
                   <motion.div
-                    className="lg:col-span-7 flex flex-col space-y-space-lg"
-                    initial={{ opacity: 0, x: 36 }}
+                    className="lg:col-span-7 flex flex-col space-y-space-md"
+                    initial={{ opacity: 0, x: 28 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.15 }}
-                    transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                   >
                     <div className="space-y-space-xs">
                       <span className="font-label-caps text-label-caps text-gold-bright uppercase tracking-widest block">
                         Institucional
                       </span>
                       <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-text-primary">
-                        Sobre o Escritório e Condução Profissional
+                        Compromisso Técnico e Atendimento Direto
                       </h2>
                     </div>
                     <p className="font-body-md text-body-md text-text-muted leading-relaxed">
-                      A{" "}
-                      <strong className="text-text-primary font-medium">
-                        APG Advocacia
-                      </strong>{" "}
-                      foi constituída com a vocação de entregar uma advocacia de
-                      caráter nobre, customizada e distante da massificação
-                      corporativa. Sob a liderança da Dra. Ana Paula Gonçalves, o
-                      escritório reúne solidez acadêmica e experiência prática
-                      direcionadas à solução de demandas de alta complexidade.
-                    </p>
-                    <p className="font-body-md text-body-md text-text-muted leading-relaxed">
-                      Nosso compromisso não se restringe à tutela judicial;
-                      dedicamos atenção prioritária ao desenho de soluções
-                      preventivas capazes de conferir estabilidade patrimonial,
-                      mitigar exposições a litígios e preservar relações
-                      intersubjetivas de valor.
+                      A <strong className="text-text-primary font-medium">APG Advocacia</strong> entrega uma assessoria consultiva e estratégica de padrão artesanal. Sob a liderança da Dra. Ana Paula Gomes, priorizamos a segurança jurídica, a proteção patrimonial e o atendimento próximo e individualizado.
                     </p>
 
-                    {/* 3 Pilares Fundamentais Conforme PRD */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-sm">
+                    {/* 3 Pilares Dinâmicos e Objetivos */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
                       {[
-                        { icon: "person_search", title: "Atendimento Individualizado", text: "Análise aprofundada de cada demanda com dedicação direta e sem intermediários desqualificados." },
-                        { icon: "lock", title: "Sigilo e Rigor Técnico", text: "Confidencialidade estrita em todas as etapas, salvaguardando documentos e informações sensíveis." },
-                        { icon: "visibility", title: "Transparência Contínua", text: "Comunicação clara, acessível e relatórios periódicos sobre o andamento dos procedimentos." },
+                        { icon: "person_search", title: "Atendimento Direto", text: "Condução direta pela titular, sem intermediários." },
+                        { icon: "lock", title: "Sigilo & LGPD", text: "Confidencialidade estrita e proteção documental total." },
+                        { icon: "shield", title: "Solução Preventiva", text: "Blindagem contratual e mitigação de litígios." },
                       ].map((pilar, i) => (
                         <motion.div
                           key={pilar.title}
-                          className="card-interactive p-space-md rounded bg-surface-card/60 border border-subtle/60 hover:border-gold-aged/60 transition-all cursor-pointer"
-                          initial={{ opacity: 0, y: 24 }}
+                          className="card-interactive p-space-md rounded bg-surface-card/70 border border-subtle/60 hover:border-gold-bright/60 transition-all cursor-pointer"
+                          initial={{ opacity: 0, y: 16 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true, amount: 0.15 }}
-                          transition={{ duration: 0.6, delay: 0.2 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                          transition={{ duration: 0.5, delay: 0.15 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                         >
-                          <div className="w-9 h-9 rounded bg-surface-coffee/30 flex items-center justify-center text-gold-bright mb-space-sm">
-                            <span className="material-symbols-outlined text-xl">{pilar.icon}</span>
+                          <div className="w-8 h-8 rounded bg-surface-coffee/40 flex items-center justify-center text-gold-bright mb-space-xs">
+                            <span className="material-symbols-outlined text-lg">{pilar.icon}</span>
                           </div>
-                          <h3 className="font-label-md text-label-md text-text-primary font-semibold">{pilar.title}</h3>
-                          <p className="font-body-sm text-body-sm text-text-muted mt-space-xs">{pilar.text}</p>
+                          <h3 className="font-label-md text-sm text-text-primary font-semibold">{pilar.title}</h3>
+                          <p className="font-body-sm text-xs text-text-muted mt-1 leading-snug">{pilar.text}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -779,7 +732,7 @@ export default function App() {
 
             {/* SEÇÃO 3: ÁREAS DE ATUAÇÃO (#areas) */}
             <section
-              className="w-full bg-surface py-space-xl sm:py-space-2xl lg:py-space-3xl border-b border-subtle"
+              className="w-full bg-surface py-space-xl sm:py-space-2xl border-b border-subtle"
               id="areas"
             >
               <div className="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
@@ -788,35 +741,33 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="flex flex-col md:flex-row md:items-end justify-between mb-space-2xl gap-space-md"
+                  className="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md"
                 >
                   <div className="space-y-space-xs max-w-2xl">
                     <span className="font-label-caps text-label-caps text-gold-bright uppercase tracking-widest block">
                       Prática Jurídica
                     </span>
                     <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-text-primary">
-                      Áreas de Atuação Jurídica
+                      Áreas de Atuação Especializada
                     </h2>
                     <p className="font-body-md text-body-md text-text-muted">
-                      Consultoria preventiva e contencioso estratégico com
-                      soluções desenhadas sob medida para pessoas físicas e
-                      jurídicas em Belo Horizonte/MG e em todo o território nacional.
+                      Consultoria preventiva e contencioso estratégico sob medida para pessoas físicas e empresas.
                     </p>
                   </div>
                   <div className="hidden md:flex items-center gap-2 text-text-muted font-body-sm text-body-sm">
                     <span className="material-symbols-outlined text-gold-aged text-base">
                       gavel
                     </span>
-                    <span>Exercício da advocacia especializada</span>
+                    <span>Conformidade com o Provimento 205/2021</span>
                   </div>
                 </motion.div>
 
-                {/* Grid com os 6 cards do PRD com animação fade-in suave no scroll */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+                {/* Grid com 6 cards dinâmicos com tags */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md sm:gap-space-lg">
                   {PRACTICE_AREAS.map((area, index) => (
                     <motion.div
                       key={area.id}
-                      initial={{ opacity: 0, y: 28 }}
+                      initial={{ opacity: 0, y: 24 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{
                         once: true,
@@ -824,8 +775,8 @@ export default function App() {
                         margin: "0px 0px -40px 0px",
                       }}
                       transition={{
-                        duration: 0.65,
-                        delay: index * 0.1,
+                        duration: 0.55,
+                        delay: index * 0.08,
                         ease: [0.16, 1, 0.3, 1],
                       }}
                       whileHover={{
@@ -841,11 +792,11 @@ export default function App() {
                           setSelectedArea(area);
                         }
                       }}
-                      className="card-interactive group p-space-xl rounded bg-surface-card border border-subtle hover:border-gold-bright flex flex-col justify-between cursor-pointer text-left"
+                      className="card-interactive group p-space-lg sm:p-space-xl rounded bg-surface-card border border-subtle hover:border-gold-bright flex flex-col justify-between cursor-pointer text-left"
                     >
                       <div>
-                        <div className="flex items-center justify-between mb-space-md">
-                          <span className="font-label-caps text-label-caps text-gold-bright/60 group-hover:text-gold-bright transition-colors duration-300">
+                        <div className="flex items-center justify-between mb-space-sm">
+                          <span className="font-label-caps text-label-caps text-gold-bright/70 group-hover:text-gold-bright transition-colors duration-300">
                             {area.code}
                           </span>
                           <span className="material-symbols-outlined text-gold-aged group-hover:text-gold-bright transition-colors duration-300 text-2xl">
@@ -855,12 +806,24 @@ export default function App() {
                         <h3 className="font-headline-sm text-headline-sm text-text-primary group-hover:text-gold-bright transition-colors duration-300">
                           {area.title}
                         </h3>
-                        <p className="font-body-md text-body-md text-text-muted mt-space-sm leading-relaxed">
+                        <p className="font-body-md text-sm text-text-muted mt-space-xs leading-relaxed">
                           {area.description}
                         </p>
+                        {area.tags && (
+                          <div className="flex flex-wrap gap-1.5 mt-space-sm">
+                            {area.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-2 py-0.5 rounded text-[11px] font-label-caps bg-surface-coffee/40 border border-[#2fa87b]/25 text-gold-bright/90"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                       </div>
                       <div className="pt-space-md mt-space-md border-t border-subtle/50 flex items-center justify-between text-body-sm text-gold-aged group-hover:text-gold-bright transition-colors duration-300">
-                        <span>{area.footerLabel}</span>
+                        <span className="text-xs font-label-caps">Ver escopo &amp; detalhes</span>
                         <span className="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform duration-300">
                           arrow_forward
                         </span>
@@ -873,7 +836,7 @@ export default function App() {
 
             {/* SEÇÃO 4: COMO ATUAMOS (#como-atuamos) */}
             <section
-              className="w-full bg-surface-graphite py-space-xl sm:py-space-2xl lg:py-space-3xl border-b border-subtle"
+              className="w-full bg-surface-graphite py-space-xl sm:py-space-2xl border-b border-subtle"
               id="como-atuamos"
             >
               <div className="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
@@ -882,7 +845,7 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-center max-w-3xl mx-auto mb-space-xl sm:mb-space-2xl space-y-space-xs"
+                  className="text-center max-w-2xl mx-auto mb-space-xl space-y-space-xs"
                 >
                   <span className="font-label-caps text-label-caps text-gold-bright uppercase tracking-widest block">
                     Procedimento Técnico
@@ -891,70 +854,68 @@ export default function App() {
                     Metodologia de Atendimento
                   </h2>
                   <p className="font-body-md text-body-md text-text-muted">
-                    Cada demanda é conduzida sob um protocolo de rigor
-                    metodológico, garantindo previsibilidade, clareza probatória
-                    e acompanhamento integral.
+                    Protocolo estruturado para assegurar previsibilidade, rigor probatório e acompanhamento integral.
                   </p>
                 </motion.div>
 
-                {/* Linha do Tempo em 4 Etapas com Fios Conectores */}
-                <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+                {/* Linha do Tempo em 4 Etapas Dinâmicas */}
+                <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md sm:gap-space-lg">
                   {/* Fio Conector Dourado Oculto em Telas Pequenas */}
-                  <div className="hidden lg:block absolute top-1/4 left-12 right-12 h-px bg-gradient-to-r from-gold-aged/10 via-gold-aged/40 to-gold-aged/10 z-0"></div>
+                  <div className="hidden lg:block absolute top-10 left-12 right-12 h-px bg-gradient-to-r from-gold-aged/10 via-gold-bright/30 to-gold-aged/10 z-0 pointer-events-none"></div>
 
                   {[
                     {
                       num: "01",
-                      title: "Escuta Atenta & Diagnóstico Inicial",
-                      desc: "Compreensão minuciosa das particularidades fáticas e dos objetivos do cliente através de consulta estruturada.",
+                      title: "Diagnóstico Inicial",
+                      desc: "Escuta qualificada e exame fático minucioso para identificar riscos e oportunidades.",
                       icon: "hearing",
                       tag: "Avaliação Preliminar",
                     },
                     {
                       num: "02",
-                      title: "Análise Jurídica & Estratégia",
-                      desc: "Avaliação aprofundada de riscos, precedentes dos tribunais superiores e desenho do plano de ação sob medida.",
+                      title: "Estratégia Jurídica",
+                      desc: "Análise doutrinária e jurisprudencial para estruturar o plano de ação sob medida.",
                       icon: "menu_book",
-                      tag: "Estudo Doutrinário",
+                      tag: "Estudo Estratégico",
                     },
                     {
                       num: "03",
-                      title: "Atuação Técnica Diligente",
-                      desc: "Condução precisa dos trâmites perante cartórios, câmaras de mediação ou instâncias do Poder Judiciário.",
+                      title: "Atuação Diligente",
+                      desc: "Condução técnica ágil perante cartórios, câmaras de mediação ou tribunais.",
                       icon: "assignment_turned_in",
-                      tag: "Execução Rigorosa",
+                      tag: "Execução Técnica",
                     },
                     {
                       num: "04",
-                      title: "Acompanhamento & Comunicação",
-                      desc: "Atualizações regulares com linguagem transparente, garantindo total ciência de cada andamento do processo.",
+                      title: "Comunicação Clara",
+                      desc: "Relatórios periódicos em linguagem acessível sobre cada andamento do processo.",
                       icon: "sync",
-                      tag: "Report Periódico",
+                      tag: "Transparência Total",
                     },
                   ].map((step, index) => (
                     <motion.div
                       key={step.num}
-                      initial={{ opacity: 0, y: 28 }}
+                      initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.15 }}
                       transition={{
-                        duration: 0.6,
-                        delay: index * 0.12,
+                        duration: 0.5,
+                        delay: index * 0.1,
                         ease: [0.16, 1, 0.3, 1],
                       }}
-                      className="card-interactive relative z-10 p-space-md sm:p-space-lg rounded bg-surface-card border border-subtle hover:border-gold-aged/60 flex flex-col items-start space-y-space-sm cursor-pointer"
+                      className="card-interactive relative z-10 p-space-md sm:p-space-lg rounded bg-surface-card border border-subtle hover:border-gold-bright/70 flex flex-col items-start space-y-space-xs cursor-pointer group"
                     >
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded bg-surface-charcoal border border-gold-aged/40 flex items-center justify-center text-gold-bright font-headline-sm font-semibold shadow-md text-base sm:text-lg">
+                      <div className="w-10 h-10 rounded-full bg-surface-charcoal border border-gold-bright/40 flex items-center justify-center text-gold-bright font-headline-sm font-semibold shadow-md text-sm group-hover:border-gold-bright transition-colors">
                         {step.num}
                       </div>
-                      <h3 className="font-headline-sm text-headline-sm text-text-primary text-base sm:text-lg">
+                      <h3 className="font-headline-sm text-base text-text-primary pt-1 group-hover:text-gold-bright transition-colors">
                         {step.title}
                       </h3>
-                      <p className="font-body-sm text-body-sm text-text-muted leading-relaxed">
+                      <p className="font-body-sm text-xs sm:text-body-sm text-text-muted leading-relaxed">
                         {step.desc}
                       </p>
-                      <div className="pt-space-xs flex items-center gap-1.5 text-gold-aged font-label-caps text-label-caps">
-                        <span className="material-symbols-outlined text-sm">
+                      <div className="pt-space-xs flex items-center gap-1 text-gold-aged font-label-caps text-[11px]">
+                        <span className="material-symbols-outlined text-xs">
                           {step.icon}
                         </span>
                         <span>{step.tag}</span>
@@ -967,97 +928,90 @@ export default function App() {
 
             {/* SEÇÃO 5: VALORES & COMPROMISSO ÉTICO (#valores) */}
             <section
-              className="w-full bg-surface py-space-xl sm:py-space-2xl lg:py-space-3xl border-b border-subtle"
+              className="w-full bg-surface py-space-xl sm:py-space-2xl border-b border-subtle"
               id="valores"
             >
               <div className="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl lg:gap-space-2xl items-center">
-                  {/* Esquerda: Síntese de Identidade Ética */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -24 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="lg:col-span-4 flex flex-col space-y-space-md"
-                  >
-                    <span className="font-label-caps text-label-caps text-gold-bright uppercase tracking-widest block">
-                      Fundamentos da Banca
-                    </span>
-                    <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-text-primary">
-                      Pilares Institucionais
-                    </h2>
-                    <p className="font-body-md text-body-md text-text-muted leading-relaxed">
-                      A prática do direito exige retidão e constância. Nossos
-                      pilares traduzem o respeito irrestrito aos mandamentos da
-                      advocacia e a proteção contínua dos interesses confiados.
-                    </p>
-                    <div className="p-space-md rounded bg-surface-card border border-subtle mt-space-sm">
-                      <div className="flex items-center gap-space-sm text-gold-bright mb-1">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-center max-w-2xl mx-auto mb-space-xl space-y-space-xs"
+                >
+                  <span className="font-label-caps text-label-caps text-gold-bright uppercase tracking-widest block">
+                    Diretrizes Deontológicas
+                  </span>
+                  <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-text-primary">
+                    Compromisso Ético &amp; Regulatório
+                  </h2>
+                  <p className="font-body-md text-body-md text-text-muted">
+                    Atuação em estrita consonância com o Estatuto da OAB (Lei nº 8.906/1994) e o Provimento nº 205/2021.
+                  </p>
+                </motion.div>
+
+                {/* 4 Cards Dinâmicos de Compromisso Ético */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+                  {[
+                    {
+                      icon: "balance",
+                      title: "Ética & Deontologia",
+                      text: "Lealdade processual, independência técnica e dignidade no exercício profissional.",
+                    },
+                    {
+                      icon: "vpn_key",
+                      title: "Sigilo Profissional",
+                      text: "Confidencialidade inviolável e proteção de dados em conformidade com a LGPD.",
+                    },
+                    {
+                      icon: "chat",
+                      title: "Linguagem Clara",
+                      text: "Comunicação objetiva, sem juridiquês e sem falsas promessas de resultado.",
+                    },
+                    {
+                      icon: "lightbulb",
+                      title: "Soluções Preventivas",
+                      text: "Foco na mediação e blindagem de contratos para evitar litígios onerosos.",
+                    },
+                  ].map((val, i) => (
+                    <motion.div
+                      key={val.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.15 }}
+                      transition={{
+                        duration: 0.5,
+                        delay: i * 0.08,
+                        ease: [0.16, 1, 0.3, 1],
+                      }}
+                      className="card-interactive p-space-md sm:p-space-lg rounded bg-surface-card border border-subtle hover:border-gold-bright/60 flex flex-col cursor-pointer group"
+                    >
+                      <div className="w-9 h-9 rounded bg-surface-coffee/30 flex items-center justify-center text-gold-bright mb-space-xs group-hover:scale-105 transition-transform">
                         <span className="material-symbols-outlined text-lg">
-                          shield
-                        </span>
-                        <span className="font-label-md text-label-md font-semibold">
-                          Provimento nº 205/2021
+                          {val.icon}
                         </span>
                       </div>
-                      <p className="font-legal-disclaimer text-legal-disclaimer text-text-muted">
-                        Comunicação orientada à estrita finalidade de informação
-                        jurídica, repelindo o mercantilismo e a captação
-                        indevida de clientela.
+                      <h3 className="font-headline-sm text-base text-text-primary group-hover:text-gold-bright transition-colors">
+                        {val.title}
+                      </h3>
+                      <p className="font-body-sm text-xs sm:text-body-sm text-text-muted mt-space-xs leading-relaxed">
+                        {val.text}
                       </p>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  ))}
+                </div>
 
-                  {/* Direita: 4 Blocos de Destaque */}
-                  <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-space-md">
-                    {[
-                      {
-                        icon: "balance",
-                        title: "Ética e Deontologia",
-                        text: "Estrita observância aos preceitos da Lei nº 8.906/1994 (Estatuto da OAB) e do Código de Ética e Disciplina, prezando pela lealdade processual e dignidade da profissão.",
-                      },
-                      {
-                        icon: "vpn_key",
-                        title: "Sigilo Profissional Absoluto",
-                        text: "Proteção perpétua sobre fatos, documentos e confidências, respaldada por infraestrutura tecnológica em conformidade com a LGPD (Lei nº 13.709/2018).",
-                      },
-                      {
-                        icon: "translate",
-                        title: "Clareza e Objetividade",
-                        text: "Desmistificação do vocabulário jurídico para propiciar compreensões lúcidas, permitindo tomadas de decisão seguras e plenamente conscientes.",
-                      },
-                      {
-                        icon: "lightbulb",
-                        title: "Foco na Solução Preventiva",
-                        text: "Busca prioritária pela pacificação extrajudicial de conflitos e blindagem contratual, otimizando recursos e prevenindo o desgaste dos tribunais.",
-                      },
-                    ].map((val, i) => (
-                      <motion.div
-                        key={val.title}
-                        initial={{ opacity: 0, y: 24 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.15 }}
-                        transition={{
-                          duration: 0.6,
-                          delay: i * 0.1,
-                          ease: [0.16, 1, 0.3, 1],
-                        }}
-                        className="card-interactive p-space-md sm:p-space-lg rounded bg-surface-card border border-subtle hover:border-gold-aged/60 flex flex-col cursor-pointer"
-                      >
-                        <div className="w-10 h-10 rounded bg-surface-coffee/20 flex items-center justify-center text-gold-bright mb-space-sm">
-                          <span className="material-symbols-outlined text-xl">
-                            {val.icon}
-                          </span>
-                        </div>
-                        <h3 className="font-headline-sm text-headline-sm text-text-primary text-base">
-                          {val.title}
-                        </h3>
-                        <p className="font-body-sm text-body-sm text-text-muted mt-space-xs leading-relaxed">
-                          {val.text}
-                        </p>
-                      </motion.div>
-                    ))}
+                {/* Selo Regulatório OAB Compacto e Elegante */}
+                <div className="mt-space-lg p-space-md rounded bg-surface-card/50 border border-subtle flex flex-col sm:flex-row items-center justify-between gap-2 max-w-3xl mx-auto text-center sm:text-left">
+                  <div className="flex items-center gap-2 text-gold-bright">
+                    <span className="material-symbols-outlined text-base">shield</span>
+                    <span className="font-label-md text-xs font-semibold uppercase tracking-wider">
+                      Provimento CFOAB nº 205/2021
+                    </span>
                   </div>
+                  <span className="font-legal-disclaimer text-xs text-text-muted">
+                    Conteúdo com propósito exclusivamente informativo e institucional.
+                  </span>
                 </div>
               </div>
             </section>
@@ -1580,7 +1534,7 @@ export default function App() {
               </p>
               <div className="flex flex-col gap-space-xs mt-space-sm">
                 <span className="font-label-md text-label-md text-text-primary font-medium">
-                  Dra. Ana Paula Gonçalves
+                  Dra. Ana Paula Gomes
                 </span>
                 <span className="font-label-caps text-label-caps text-gold-bright">
                   Inscrição OAB/MG 000.000
@@ -1725,7 +1679,7 @@ export default function App() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg border-t border-subtle/40 text-text-muted font-legal-disclaimer text-legal-disclaimer">
             <div>
               © 2025 APG Advocacia. Todos os direitos reservados. Razão Social:
-              Ana Paula Gonçalves Sociedade Individual de Advocacia.
+              Ana Paula Gomes Sociedade Individual de Advocacia.
             </div>
             <div className="flex items-center gap-space-lg">
               <a
